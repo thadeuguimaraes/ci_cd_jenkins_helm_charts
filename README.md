@@ -40,7 +40,7 @@ Para implantar uma instância do Jenkins com as configurações padrão, execute
 
 Release &quot;myjenkins&quot; does not exist. Installing it now.
 NAME: myjenkins
-LAST DEPLOYED: Tue Oct 19 08:13:11 2021
+LAST DEPLOYED: Thu jan 19 08:13:11 2023
 NAMESPACE: default
 STATUS: deployed
 REVISION: 1
@@ -85,17 +85,17 @@ Encaminhando de [::1]:8080 -&gt; 8080
 <p>Um serviço do tipo <code>LoadBalancer</code> expõe pods por meio de um endereço IP público. Exatamente como esse endereço IP público é criado é deixado para o cluster. Por exemplo, plataformas Kubernetes hospedadas como EKS, AKS e GKE criam um balanceador de carga de rede para direcionar o tráfego para o cluster K8s.</p>
 <p>Observe que os serviços <code>LoadBalancer</code> requerem configuração adicional ao usar um cluster Kubernetes de teste local, como os clusters criados por tipo. Consulte a <a href="https://kind.sigs.k8s.io/docs/user/loadbalancer/" rel="nofollow">documentação do tipo</a> para obter mais informações.</p>
 <p>Para configurar o serviço como um <code>LoadBalancer</code>, crie um arquivo chamado <code>values.yaml</code> com o seguinte conteúdo:</p>
-<pre><code class="language-yaml">controlador:
+<pre><code class="language-yaml">controlller:
    serviceType: LoadBalancer
 </code></pre>
 <p>Em seguida, atualize a versão do Helm usando os valores definidos em <code>values.yaml</code> com o comando:</p>
-<pre><code class="language-bash">atualização do helm --install -f values.yaml myjenkins jenkins/jenkins
+<pre><code class="language-bash">helm upgrade --install -f values.yaml myjenkins jenkins/jenkins
 </code></pre>
 <p>A saída é alterada sutilmente com a adição de novas instruções para retornar o IP público do serviço:</p>
 <pre><code class="language-bash">$ helm upgrade --install -f values.yaml myjenkins jenkins/jenkins
 Release "myjenkins" has been upgraded. Happy Helming!
 NAME: myjenkins
-LAST DEPLOYED: Tue Oct 19 08:45:23 2021
+LAST DEPLOYED: Thu jan 19 08:45:23 2023
 NAMESPACE: default
 STATUS: deployed
 REVISION: 4
