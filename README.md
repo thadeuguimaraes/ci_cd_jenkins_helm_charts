@@ -138,7 +138,8 @@ Você pode perceber que o Jenkins relata o seguinte erro ao acessá-lo por meio 
 It appears that your reverse proxy set up is broken.
 <br>
 <br>
-![](https://i.octopus.com/blog/2022-01/jenkins-helm-install-guide/reverse-proxy-error.png)
+</code></pre>
+<p><a href='#' data-featherlight='https://i.octopus.com/blog/2022-01/jenkins-helm-install-guide/reverse-proxy-error.png' class='zoom' data-title=''><img src='https://i.octopus.com/blog/2022-01/jenkins-helm-install-guide/reverse-proxy-error.png' class="img-fluid center" height="auto" width="500" alt='Jenkins error message' /></a></p>
 
 Isso pode ser resolvido definindo a URL pública na controller.jenkinsUrlpropriedade, substituindo a84aa6226d6e5496882cfafdd6564a35-901117307.us-west-1.elb.amazonaws.compelo endereço IP ou nome do host da sua instância do Jenkins:
 
