@@ -79,7 +79,7 @@ Encaminhando de [::1]:8080 -&gt; 8080
 <p>Agora você tem uma instância funcional, embora básica, do Jenkins em execução no Kubernetes.</p>
 <h2 id="exposing-jenkins-through-a-public-ip-address">Expondo o Jenkins por meio de um endereço IP público</h2>
 <p>Acessar o Jenkins por meio de um túnel é útil para depuração, mas não é uma ótima experiência para um servidor de produção. Para acessar o Jenkins por meio de um endereço IP disponível publicamente, você deve substituir a configuração padrão definida no gráfico. Existem centenas de valores que podem ser definidos e a lista completa está disponível executando o comando:</p>
-<pre><code class="language-bash">helm mostrar valores jenkins/jenkins
+<pre><code class="language-bash">helm show values jenkins/jenkins
 </code></pre>
 <p>Configurar o serviço que expõe o pod Jenkins como um <code>LoadBalancer</code> é a maneira mais fácil de acessar o Jenkins publicamente.</p>
 <p>Um serviço do tipo <code>LoadBalancer</code> expõe pods por meio de um endereço IP público. Exatamente como esse endereço IP público é criado é deixado para o cluster. Por exemplo, plataformas Kubernetes hospedadas como EKS, AKS e GKE criam um balanceador de carga de rede para direcionar o tráfego para o cluster K8s.</p>
